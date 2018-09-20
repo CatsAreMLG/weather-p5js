@@ -12,7 +12,7 @@ var http = require("http");
 var express = require("express");
 var fs = require("fs");
 var app = express();
-// app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public'));
 http.createServer((req, res)=>{
     var url = req.url;
     switch(url) {
