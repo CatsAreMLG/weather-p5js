@@ -2,9 +2,10 @@
   "name": "weapther_api",
   "version": "1.0.0",
   "description": "",
-  "main": "script.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/CatsAreMLG/weather-p5js/issues"
   },
-  "homepage": "https://github.com/CatsAreMLG/weather-p5js#readme"
+  "homepage": "https://github.com/CatsAreMLG/weather-p5js#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }

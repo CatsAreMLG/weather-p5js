@@ -18,6 +18,7 @@ function draw() {
     background(0);
     frameRate(60);
     if (weather) {
+        windDirection = weather.wind.deg;
         windSpeed = weather.wind.speed;
         temperature = weather.main.temp;
         if (temperature < 0) {
@@ -41,10 +42,10 @@ function draw() {
         }
         i += .2 * (randomWind/5);
         background(2.55 * temperature, (((temperature / 100) - 1) * -100) * 1.8, ((temperature / 100) - 1) * -255);
-        document.getElementById('p').innerHTML = 'Temperature: ' + temperature + ' - Wind Speed: ' + weather.wind.speed + ' - Wind Direction: ' + weather.wind.deg + ' - Wind Speed Iterator: ' + i;
+        document.getElementById('p').innerHTML = 'Temperature: ' + temperature + ' - Wind Speed: ' + weather.wind.speed + ' - Wind Direction: ' + ((windDirection)?windDirection:'No Current Wind Direction Weather Data.') + ' - Wind Speed Iterator: ' + i;
         stroke(255);
         translate(width/2, height/2)
-        rotate(weather.wind.deg + i);
+        rotate(windDirection + i);
         line(0, 0, 0, 50);
     }
 }
