@@ -32,8 +32,9 @@ http.createServer((req, res)=>{
             res.writeHead(404, {'Content-Type':'text/plain'});
             res.end('404 - Page not found.');
     }
-}).listen(process.env.PORT || 3000);
-console.log('server running at http://localhost:3000');
+}).listen(3000, function () {
+    console.log('Express server listening on %d, in %s mode', 3000, app.get('env'));
+});
 
 function getStatic(res, file, content) {
     fs.readFile(file, (err, data)=>{
